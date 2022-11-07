@@ -1,7 +1,7 @@
 import s from './CostItem.module.css'
+import {CostDate} from "./CostDate/CostDate";
 
-
-type CostItemType = {
+export type CostItemType = {
     date: any
     descrioption: string
     amount: number
@@ -9,13 +9,17 @@ type CostItemType = {
 
 export const CostItem = (props: CostItemType) => {
 
-    // let costDate: Date = new Date(2022, 2, 12);
-    // const costDescrioption = 'холодельник';
-    // const costAmount = 1000;
+    const{date, descrioption, amount}=props
 
     return (
         <div className={s.costItem}>
-            <div>{props.date.toDateString()}</div>
+
+                <CostDate
+                    date={date}
+                    descrioption={descrioption}
+                    amount={amount}
+                />
+
             <div className={s.costItem__description}>
                 <h2>{props.descrioption}</h2>
                 <div className={s.costItem__price}>${props.amount}</div>

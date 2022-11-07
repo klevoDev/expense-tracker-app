@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import {CostItem} from "./components/CostItem";
+
+import {Costs} from "./components/Costs/Costs";
 
 function App() {
 
@@ -25,21 +26,7 @@ function App() {
     return (
         <div className="App">
             <h1>Тест</h1>
-            <CostItem
-                date={costs[0].date}
-                descrioption={costs[0].descrioption}
-                amount={costs[0].amount}
-            />
-            <CostItem
-                date={costs[0].date}
-                descrioption={costs[0].descrioption}
-                amount={costs[0].amount}
-            />
-            <CostItem
-                date={costs[0].date}
-                descrioption={costs[0].descrioption}
-                amount={costs[0].amount}
-            />
+            <Costs costs={costs}/>
         </div>
     );
 }
