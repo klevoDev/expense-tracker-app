@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {NewCost} from "./components/NewCosts/NewCost";
 
 import {Costs} from "./components/Costs/Costs";
 
@@ -25,7 +26,7 @@ function App() {
 
     return (
         <div className="App">
-            <h1>Тест</h1>
+            <NewCost />
             <Costs costs={costs}/>
         </div>
     );

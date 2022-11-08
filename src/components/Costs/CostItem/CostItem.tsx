@@ -1,29 +1,35 @@
 import s from './CostItem.module.css'
 import {CostDate} from "./CostDate/CostDate";
+import {Card} from "../../UI/Card";
+import React, {useState} from "react";
 
 export type CostItemType = {
-    date: any
+    date: any // пока ищу
     descrioption: string
     amount: number
 }
 
 export const CostItem = (props: CostItemType) => {
+    const [descrioption, setDescrioption] = useState(props.descrioption);
 
-    const{date, descrioption, amount}=props
+    const changeDescrioptionHandler = () => {
+        setDescrioption('dsf')
+    }
 
     return (
-        <div className={s.costItem}>
+        <Card className={s.costItem}>
 
                 <CostDate
-                    date={date}
-                    descrioption={descrioption}
-                    amount={amount}
+                    date={props.date}
+                    descrioption={props.descrioption}
+                    amount={props.amount}
                 />
 
             <div className={s.costItem__description}>
-                <h2>{props.descrioption}</h2>
+                <h2>{descrioption}</h2>
                 <div className={s.costItem__price}>${props.amount}</div>
             </div>
-        </div>
+            <button onClick={changeDescrioptionHandler}>Изменить описание</button>
+        </Card>
     )
 }

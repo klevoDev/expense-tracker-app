@@ -1,6 +1,7 @@
 import {CostItem, CostItemType} from "./CostItem/CostItem";
 import classes from "./Costs.module.css";
 import React from "react";
+import {Card} from "../UI/Card";
 
 type CostsType = {
     costs: Array<CostItemType>
@@ -11,7 +12,7 @@ export const Costs = (props: CostsType) => {
     const{costs}=props
 
     return (
-        <div className={classes.costs}>
+        <Card className={classes.costs}>
             <CostItem
                 date={costs[0].date}
                 descrioption={costs[0].descrioption}
@@ -27,7 +28,6 @@ export const Costs = (props: CostsType) => {
                 descrioption={costs[2].descrioption}
                 amount={costs[2].amount}
             />
-
-        </div>
+        </Card>
     )
 }
