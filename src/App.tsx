@@ -24,6 +24,10 @@ function App() {
         },
     ];
 
+    const addCostHandler = () => {
+
+    }
+
     return (
         <div className="App">
             <NewCost />

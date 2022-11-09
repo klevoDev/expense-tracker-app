@@ -1,10 +1,17 @@
 import classes from "./NewCost.module.css";
-import {CostForm} from "./CostForm/CostForm";
+import {CostForm, NewCostType} from "./CostForm/CostForm";
+
+
+
 
 export const NewCost = () => {
+    const getCost = (fullCost: NewCostType) => {
+        alert(JSON.stringify(fullCost, null, 2))
+    }
     return (
         <div className={classes.newCost}>
-            <CostForm/>
+            <CostForm getFullCost={getCost}/>
         </div>
-    )
+    );
+
 }
